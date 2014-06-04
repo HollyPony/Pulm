@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="download">resources/downloadIcon.png</file>
+        <file alias="refresh">resources/refreshIcon.png</file>
+        <file alias="stop">resources/stopIcon.png</file>
+        <file alias="betaseries">resources/betaseries.png</file>
+        <file alias="arrowDownDisabled">resources/arrowDownDisabled.png</file>
+        <file alias="arrowRightEnabled">resources/arrowRightEnabled.png</file>
+        <file alias="play">resources/play.png</file>
+        <file alias="logo">resources/logo.png</file>
+    </qresource>
+    <qresource prefix="/tr">
+        <file alias="fr">languages/Serizer_fr.qm</file>
+    </qresource>
+</RCC>
