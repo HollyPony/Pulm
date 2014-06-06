@@ -150,7 +150,6 @@ void TrayIcon::userDisconnected()
 
 //    item->setSizeHint(QSize(_unseenListWidget->sizeHint().width(), 40));
     item->setTextAlignment(Qt::AlignCenter);
-    qDebug() << "TrayIcon::userDisconnected" << _unseenListWidget->sizeHint();
 
     _unseenListWidget->setItemWidget(item, connectButton);
 }
