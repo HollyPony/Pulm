@@ -4,9 +4,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
 
-#if defined Q_OS_WIN
 #include <QtWidgets/QSystemTrayIcon>
-#endif
 
 class BetaSeriesApi;
 class TrayIconWidget;
@@ -34,16 +32,12 @@ signals:
     void connectionRequested();
     void showMainWindowRequested();
 
-#if defined Q_OS_WIN
 private slots:
     void trayTriggered(QSystemTrayIcon::ActivationReason reason);
-#endif
 
 private:
     BetaSeriesApi *_api;
-#if defined Q_OS_WIN
     QSystemTrayIcon *_tray;
-#endif
     TrayIconWidget *_trayIconWidget; // TODO Probably useless
 
     QListWidget *_unseenListWidget;

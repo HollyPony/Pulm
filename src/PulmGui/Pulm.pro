@@ -31,8 +31,8 @@ SOURCES += \
     ui/memberconnectdialog.cpp \
     ui/unseenepisodewidget.cpp \
     databasemanager.cpp \
-    trayiconwidget.cpp \
-    systemtrayclasstest.cpp
+    trayicon.cpp \
+    trayiconwidget.cpp
 
 HEADERS  += \
     ui/mainwindow.h \
@@ -44,22 +44,7 @@ HEADERS  += \
     ui/unseenepisodewidget.h \
     databasemanager.h \
     trayicon.h \
-    trayiconwidget.h \
-    systemtrayclasstest.h
-
-win32 {
-SOURCES += \
-    trayicon.cpp
-}
-
-macx {
-OBJECTIVE_HEADERS += \
-    macmenu.h
-
-OBJECTIVE_SOURCES += \
-    trayicon.mm \
-    macmenu.mm
-}
+    trayiconwidget.h
 
 FORMS    += \
     ui/mainwindow.ui \
