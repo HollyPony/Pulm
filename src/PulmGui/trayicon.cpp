@@ -64,7 +64,7 @@ TrayIcon::~TrayIcon()
     if (_tray) {
         _tray->contextMenu()->deleteLater();
         _tray->hide();
-        delete _tray;
+        _tray->deleteLater();
         _tray = NULL;
     }
 }
