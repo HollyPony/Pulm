@@ -9,7 +9,13 @@
 class BetaSeriesApi;
 class TrayIconWidget;
 
+#if defined Q_OS_MAC
+class QActionGroup;
+#endif
+
+#if defined Q_OS_WIN
 class QListWidget;
+#endif
 
 class TrayIcon : public QObject {
 
@@ -38,9 +44,14 @@ private slots:
 private:
     BetaSeriesApi *_api;
     QSystemTrayIcon *_tray;
-    TrayIconWidget *_trayIconWidget; // TODO Probably useless
 
+#if defined Q_OS_MAC
+    QActionGroup *_unseenActionGroup;
+#endif
+
+#if defined Q_OS_WIN
     QListWidget *_unseenListWidget;
+#endif
 };
 
 #endif // TRAYICON_H
