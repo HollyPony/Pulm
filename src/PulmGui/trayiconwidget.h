@@ -19,8 +19,12 @@ public:
 
     QListWidget *listWidget();
 
+signals:
+    void showMainWindowRequested();
+
 private slots:
     void on_btnQuit_clicked();
+    void on_btnOpenSerizer_clicked();
 
 private:
     Ui::MacTrayIcon *ui;

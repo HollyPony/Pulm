@@ -7,7 +7,6 @@
 #include <QtWidgets/QSystemTrayIcon>
 
 class BetaSeriesApi;
-class TrayIconWidget;
 
 #if defined Q_OS_MAC
 class QActionGroup;

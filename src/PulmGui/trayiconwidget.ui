@@ -168,7 +168,7 @@ QListWidget {
 }
 
 QListWidget::item QPushButton {
-	height: 30px;
+	height: 34px;
 }</string>
      </property>
      <property name="lineWidth">
@@ -210,29 +210,7 @@ QPushButton::pressed {
     </widget>
    </item>
   </layout>
-  <action name="actionTest">
-   <property name="text">
-    <string>test</string>
-   </property>
-  </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btnOpenSerizer</sender>
-   <signal>clicked()</signal>
-   <receiver>actionTest</receiver>
-   <slot>trigger()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>157</x>
-     <y>15</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

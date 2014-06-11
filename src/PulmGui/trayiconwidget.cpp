@@ -12,8 +12,6 @@ TrayIconWidget::TrayIconWidget(QWidget *parent) :
     ui(new Ui::MacTrayIcon)
 {
     ui->setupUi(this);
-
-    setVisible(false);
 }
 
 TrayIconWidget::~TrayIconWidget()
@@ -29,4 +27,9 @@ QListWidget *TrayIconWidget::listWidget()
 void TrayIconWidget::on_btnQuit_clicked()
 {
     qApp->quit();
+}
+
+void TrayIconWidget::on_btnOpenSerizer_clicked()
+{
+    emit showMainWindowRequested();
 }

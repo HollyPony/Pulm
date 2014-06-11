@@ -30,11 +30,6 @@ TrayIcon::TrayIcon(BetaSeriesApi *api, QObject *parent)
     QMenu *trayMenu = new QMenu;
     trayMenu->setMinimumWidth(300);
 
-    trayMenu->addAction(tr("Open Pulm"));
-
-    trayMenu->addSection(QIcon(":/icons/logo"), "Episodes to see"); // Display as separator on OSX
-
-
 // If QWidget Traymenu suported
 #if defined Q_OS_WIN
     TrayIconWidget *trayIconWidget = new TrayIconWidget(trayMenu);
@@ -42,18 +37,23 @@ TrayIcon::TrayIcon(BetaSeriesApi *api, QObject *parent)
     QWidgetAction *trayIconWidgetAction = new QWidgetAction(trayMenu);
     trayIconWidgetAction->setDefaultWidget(trayIconWidget);
     trayMenu->addAction(trayIconWidgetAction);
+
+    connect(trayIconWidget, SIGNAL(showMainWindowRequested()), this, SIGNAL(showMainWindowRequested()));
 #endif
 #if defined Q_OS_MAC
+    trayMenu->addAction(tr("Open Pulm"));
+    trayMenu->addSeparator();
+
     _unseenActionGroup = new QActionGroup(_tray);
     _unseenActionGroup->addAction(QIcon(":/icons/logo"), "Ep1");
     trayMenu->addActions(_unseenActionGroup->actions());
-#endif
-
     trayMenu->addSeparator();
 
     QAction *action = new QAction(_tray);
     action->setText(tr("Quit"));
     trayMenu->addAction(action);
+#endif
+
 
     _tray->setContextMenu(trayMenu);
 
@@ -74,9 +74,6 @@ TrayIcon::TrayIcon(BetaSeriesApi *api, QObject *parent)
         userConnected();
     else
         userDisconnected();
-
-
-    _unseenActionGroup->addAction(QIcon(":/icons/logo"), "Ep2");
 }
 
 TrayIcon::~TrayIcon()
@@ -152,7 +149,8 @@ void TrayIcon::refreshUnseenSeries(QVariant series)
         _unseenListWidget->clear();
         QListWidgetItem *item = new QListWidgetItem(tr("You have seen all the episodes!"), _unseenListWidget);
         item->setTextAlignment(Qt::AlignCenter);
-        item->setSizeHint(QSize(_unseenListWidget->sizeHint().width(), 40));
+        // TODO : Test again if this line is useful
+//        item->setSizeHint(QSize(_unseenListWidget->sizeHint().width(), 40));
         _unseenListWidget->setEnabled(false);
     }
 }
