@@ -4,13 +4,13 @@ Pulm is Qt5 based application to be used as a client of [betaseries.com](http://
 # To use me #
 Download the executable for your platform, double-click, allow exception in the firewall if needed, use it.
 * Pc
-  * [Mega]()(unavaible)
-  * [DropBox]()(unavaible)
+  * [Mega]()(Coming soon ...)
+  * [DropBox]()(Coming soon ...)
 * Mac
-  * [Mega]()(unavaible)
-  * [DropBox]()(unavaible)
+  * [Mega]()(Coming soon ...)
+  * [DropBox]()(Coming soon ...)
 
-# Whatch me I'm famous #
+# Watch me I'm famous #
 In progress
 
 # What i'm doing ! (And what I'll do ...) #
@@ -29,13 +29,13 @@ What I hope to do:
 
 # To develop with me #
 ## Get base ##
-Clone Pulm like:
+Clone Pulm:
 
     ssh  : git clone git@github.com:liomka/Pulm.git
     https: git clone https://github.com/liomka/qUpdater.git
 
 ## Get modules ##
-Go into the Pulm folder, under ./src/Third-part/ and clone the qupdater project like:
+Go into the Pulm folder, under ./src/Third-part/ and clone the qupdater project:
 
     ssh  : git clone git@github.com:liomka/qUpdater.git
     https: git clone https://github.com/liomka/qUpdater.git
@@ -45,7 +45,7 @@ Open the Pulm.pro file avaible in Pulm/src folder.
 
 Under the project tab, add build environment variable as BETASERIESAPIKEY with your betaseries api key avaible [here](http://www.betaseries.com/api/) (account needed).
 
-Open-Ssh should be provided in your mac OSX system and is provided in this repo fro Windows users.
+Open-Ssh should be provided in your mac OSX system and is provided in this repo for Windows users as dll.
 
 Other build system are not supported yet. CMake is in mind ...
 
